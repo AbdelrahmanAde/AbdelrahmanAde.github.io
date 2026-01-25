@@ -11,30 +11,74 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- ✅ Smaller project images like AlexTheAnalyst style -->
+    <!-- ✅ Projects-only styling (Alex-like layout + no cropped images) -->
     <style>
-      /* Make project images look like clean thumbnails (not huge) */
-      .project-thumb img{
-        width: 100%;
-        height: 240px;           /* change to 200-280 if you want */
-        object-fit: cover;       /* keeps it nice without stretching */
-        border-radius: 6px;
-        display: block;
+      /* ---------- Projects layout + typography ---------- */
+      #projects .post.featured {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
       }
 
-      /* Featured project thumbnail slightly taller */
-      .featured-thumb img{
-        width: 100%;
-        height: 320px;           /* change if you want smaller */
-        object-fit: cover;
-        border-radius: 8px;
-        display: block;
+      /* Featured title smaller than default featured (more Alex-like) */
+      #projects .post.featured header.major h2 {
+        font-size: 1.65rem;
+        line-height: 1.25;
+        margin-bottom: 0.75rem;
       }
 
-      /* Make titles clickable without ugly underline */
-      .project-title-link{
-        text-decoration: none;
-        border-bottom: none;
+      /* Regular cards title size */
+      #projects .posts article h2 {
+        font-size: 1.25rem;
+        line-height: 1.25;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Cleaner click style */
+      #projects .project-title-link{
+        text-decoration: none !important;
+        border-bottom: none !important;
+      }
+
+      /* ---------- Image styling: show full image (no crop) ---------- */
+      /* Featured image: keep full image visible */
+      #projects .featured-thumb img{
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;        /* ✅ no crop */
+        background: #ffffff;        /* letterbox background */
+        border-radius: 10px;
+        padding: 10px;
+        display: block;
+        box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      }
+
+      /* Regular cards: same behavior but a bit smaller */
+      #projects .project-thumb img{
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;        /* ✅ no crop */
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 10px;
+        display: block;
+        box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      }
+
+      /* Alex-like hover */
+      #projects a.image:hover img{
+        transform: translateY(-2px);
+        transition: .2s ease;
+      }
+
+      /* Make Featured project look like a normal top card (not huge) */
+      #projects .post.featured .image.main,
+      #projects .post.featured .image {
+        margin: 1rem 0 1rem 0;
+      }
+
+      /* Buttons spacing tighter like Alex */
+      #projects .actions.special {
+        margin-top: 0.75rem;
       }
     </style>
   </head>
@@ -78,7 +122,7 @@
         <!-- Projects -->
         <section id="projects">
 
-          <!-- ✅ Featured Project -->
+          <!-- ✅ Project 1 (Top / Featured but not huge) -->
           <article class="post featured">
             <header class="major">
               <h2>
@@ -95,25 +139,23 @@
               </p>
             </header>
 
-            <!-- ✅ Click image to open repo -->
             <a href="https://github.com/AbdelrahmanAde/Customer-Churn-Analysis-Dashboard-Power-BI"
                class="image featured-thumb" target="_blank" rel="noopener">
               <img src="images/Customer%20Churn%20Analysis%20Dashboard%20.PNG"
                    alt="Customer Churn Analysis Dashboard" />
             </a>
 
-            <!-- ✅ Button -->
             <ul class="actions special">
               <li>
                 <a href="https://github.com/AbdelrahmanAde/Customer-Churn-Analysis-Dashboard-Power-BI"
-                   class="button large" target="_blank" rel="noopener">
+                   class="button" target="_blank" rel="noopener">
                   View Project
                 </a>
               </li>
             </ul>
           </article>
 
-          <!-- ✅ Other Projects -->
+          <!-- ✅ Below: 2 projects row, then 2 projects row -->
           <section class="posts">
 
             <!-- Project 2 -->
@@ -251,9 +293,7 @@
             </article>
 
           </section>
-
         </section>
-
       </div>
 
       <!-- Footer -->
@@ -295,6 +335,5 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-
   </body>
 </html>
