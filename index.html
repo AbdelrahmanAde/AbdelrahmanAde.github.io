@@ -11,81 +11,124 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- ✅ Projects-only styling (Alex-like layout + dividers) -->
+    <!-- ✅ Projects-only styling (Alex-like layout + 2x2 grid + no cropped images + full-width dividers) -->
     <style>
-      /* ---------- Featured project ---------- */
+      /* ---------- Projects layout + typography ---------- */
       #projects .post.featured {
         padding-top: 1.25rem;
-        padding-bottom: 3rem;
-        margin-bottom: 3rem;
-        border-bottom: 1px solid rgba(0,0,0,0.08); /* ✅ divider */
+        padding-bottom: 1.25rem;
+        margin-bottom: 2.25rem;
       }
 
-      /* ---------- 2x2 Grid ---------- */
+      /* ✅ Force 2 columns for projects (2+2) */
       #projects .posts {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 2.5rem;
+        gap: 2rem;
+        margin-top: 2rem;
       }
 
+      /* Mobile: 1 column */
       @media (max-width: 980px) {
         #projects .posts {
           grid-template-columns: 1fr;
+          gap: 1.5rem;
         }
       }
 
-      /* ---------- Divider between rows ---------- */
-      #projects .posts article {
-        padding-top: 2rem;
-        border-top: 1px solid rgba(0,0,0,0.06); /* ✅ subtle divider */
-      }
-
-      /* ---------- Typography ---------- */
+      /* Featured title smaller than default featured (more Alex-like) */
       #projects .post.featured header.major h2 {
         font-size: 1.65rem;
         line-height: 1.25;
+        margin-bottom: 0.75rem;
       }
 
+      /* Regular cards title size */
       #projects .posts article h2 {
         font-size: 1.25rem;
         line-height: 1.25;
+        margin-bottom: 0.5rem;
       }
 
-      .project-title-link {
+      /* Cleaner click style */
+      #projects .project-title-link {
         text-decoration: none !important;
         border-bottom: none !important;
       }
 
-      /* ---------- Images (no crop) ---------- */
-      .featured-thumb img,
-      .project-thumb img {
+      /* ---------- Image styling: show full image (no crop) ---------- */
+      #projects .featured-thumb img,
+      #projects .project-thumb img {
         width: 100%;
         aspect-ratio: 16 / 9;
-        object-fit: contain;
-        background: #fff;
-        padding: 10px;
+        object-fit: contain;     /* ✅ show full image (no crop) */
+        background: #ffffff;
         border-radius: 10px;
+        padding: 10px;
+        display: block;
         box-shadow: 0 10px 30px rgba(0,0,0,.06);
       }
 
+      /* Alex-like hover */
       #projects a.image:hover img {
         transform: translateY(-2px);
         transition: .2s ease;
       }
 
+      /* Buttons spacing tighter like Alex */
       #projects .actions.special {
         margin-top: 0.75rem;
+      }
+
+      /* ✅ FULL-WIDTH DIVIDERS (like your screenshot) */
+      #projects .divider {
+        grid-column: 1 / -1;              /* full width across both columns */
+        height: 1px;
+        background: rgba(0,0,0,0.08);
+        margin: 0.25rem 0 0.25rem 0;
+      }
+
+      /* Keep divider visible on mobile too */
+      @media (max-width: 980px) {
+        #projects .divider {
+          margin: 0.5rem 0;
+        }
       }
     </style>
   </head>
 
   <body class="is-preload">
+
     <div id="wrapper" class="fade-in">
+
+      <!-- Intro -->
+      <div id="intro">
+        <h1>Abdelrahman Adel<br />BI Developer</h1>
+        <p>
+          Business Intelligence Developer specialized in <strong>Power BI</strong>, <strong>SQL</strong>, and <strong>Data Analytics</strong>.<br />
+          I build executive-ready dashboards, KPI reports, and scalable BI solutions that turn raw data into actionable insights.
+        </p>
+        <ul class="actions">
+          <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+        </ul>
+      </div>
 
       <!-- Header -->
       <header id="header">
         <a href="index.html" class="logo">Portfolio</a>
       </header>
+
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li class="active"><a href="#projects">Projects</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+        <ul class="icons">
+          <li><a href="https://www.linkedin.com" class="icon brands fa-linkedin" target="_blank" rel="noopener"><span class="label">LinkedIn</span></a></li>
+          <li><a href="https://github.com/AbdelrahmanAde" class="icon brands fa-github" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
+        </ul>
+      </nav>
 
       <!-- Main -->
       <div id="main">
@@ -93,110 +136,221 @@
         <!-- Projects -->
         <section id="projects">
 
-          <!-- Project 1 (Featured) -->
+          <!-- ✅ Project 1 (Top / Featured) -->
           <article class="post featured">
             <header class="major">
               <h2>
                 <a class="project-title-link"
                    href="https://github.com/AbdelrahmanAde/Customer-Churn-Analysis-Dashboard-Power-BI"
-                   target="_blank">
+                   target="_blank" rel="noopener">
                   Customer Churn Analysis Dashboard — Power BI
                 </a>
               </h2>
               <p>
-                <strong>Business problem:</strong> Identify customer churn drivers.<br />
-                <strong>KPIs:</strong> Churn rate, demographics, product usage.<br />
+                <strong>Business problem:</strong> Identify customer churn patterns and key drivers to support retention-focused decisions.<br />
+                <strong>KPIs:</strong> Total customers, churn rate, churn by demographics, product usage, credit score, account balance.<br />
                 <strong>Tools:</strong> Power BI, DAX, Power Query.
               </p>
             </header>
 
-            <a class="image featured-thumb"
-               href="https://github.com/AbdelrahmanAde/Customer-Churn-Analysis-Dashboard-Power-BI"
-               target="_blank">
-              <img src="images/Customer%20Churn%20Analysis%20Dashboard%20.PNG" />
+            <a href="https://github.com/AbdelrahmanAde/Customer-Churn-Analysis-Dashboard-Power-BI"
+               class="image featured-thumb" target="_blank" rel="noopener">
+              <img src="images/Customer%20Churn%20Analysis%20Dashboard%20.PNG"
+                   alt="Customer Churn Analysis Dashboard" />
             </a>
 
             <ul class="actions special">
-              <li><a class="button" target="_blank"
-                href="https://github.com/AbdelrahmanAde/Customer-Churn-Analysis-Dashboard-Power-BI">
-                View Project</a></li>
+              <li>
+                <a href="https://github.com/AbdelrahmanAde/Customer-Churn-Analysis-Dashboard-Power-BI"
+                   class="button" target="_blank" rel="noopener">
+                  View Project
+                </a>
+              </li>
             </ul>
           </article>
 
-          <!-- Grid projects -->
+          <!-- ✅ Grid: Project 2+3 (row 1) then divider then 4+5 (row 2) -->
           <section class="posts">
 
             <!-- Project 2 -->
             <article>
-              <h2><a class="project-title-link" target="_blank"
-                href="https://github.com/AbdelrahmanAde/E-Commerce-Sales-Performance-Dashboard-Power-BI">
-                E-Commerce Sales Performance — Power BI</a></h2>
-              <a class="image project-thumb" target="_blank"
-                href="https://github.com/AbdelrahmanAde/E-Commerce-Sales-Performance-Dashboard-Power-BI">
-                <img src="images/Overview%20.PNG" />
+              <header>
+                <h2>
+                  <a class="project-title-link"
+                     href="https://github.com/AbdelrahmanAde/E-Commerce-Sales-Performance-Dashboard-Power-BI"
+                     target="_blank" rel="noopener">
+                    E-Commerce Sales Performance Dashboard — Power BI
+                  </a>
+                </h2>
+              </header>
+
+              <a href="https://github.com/AbdelrahmanAde/E-Commerce-Sales-Performance-Dashboard-Power-BI"
+                 class="image project-thumb" target="_blank" rel="noopener">
+                <img src="images/Overview%20.PNG" alt="E-Commerce Sales Performance Dashboard" />
               </a>
-              <p><strong>KPIs:</strong> Sales, units, sellers, regions.</p>
+
+              <p>
+                <strong>Business problem:</strong> Monitor sales performance, order status, and regional demand for operational insights.<br />
+                <strong>KPIs:</strong> Total sales, units sold, seller count, order status, sales by city/state, sales trends.<br />
+                <strong>Tools:</strong> Power BI, DAX, Power Query.
+              </p>
+
               <ul class="actions special">
-                <li><a class="button" target="_blank"
-                  href="https://github.com/AbdelrahmanAde/E-Commerce-Sales-Performance-Dashboard-Power-BI">
-                  View Project</a></li>
+                <li>
+                  <a href="https://github.com/AbdelrahmanAde/E-Commerce-Sales-Performance-Dashboard-Power-BI"
+                     class="button" target="_blank" rel="noopener">
+                    View Project
+                  </a>
+                </li>
               </ul>
             </article>
 
             <!-- Project 3 -->
             <article>
-              <h2><a class="project-title-link" target="_blank"
-                href="https://github.com/AbdelrahmanAde/HR-Analytics-Dashboard-Power-BI">
-                HR Analytics Dashboard — Power BI</a></h2>
-              <a class="image project-thumb" target="_blank"
-                href="https://github.com/AbdelrahmanAde/HR-Analytics-Dashboard-Power-BI">
-                <img src="images/HR%20.PNG" />
+              <header>
+                <h2>
+                  <a class="project-title-link"
+                     href="https://github.com/AbdelrahmanAde/HR-Analytics-Dashboard-Power-BI"
+                     target="_blank" rel="noopener">
+                    HR Analytics Dashboard — Power BI
+                  </a>
+                </h2>
+              </header>
+
+              <a href="https://github.com/AbdelrahmanAde/HR-Analytics-Dashboard-Power-BI"
+                 class="image project-thumb" target="_blank" rel="noopener">
+                <img src="images/HR%20.PNG" alt="HR Analytics Dashboard" />
               </a>
-              <p><strong>KPIs:</strong> Attrition, headcount, satisfaction.</p>
+
+              <p>
+                <strong>Business problem:</strong> Track workforce metrics and employee attrition to support HR reporting and workforce planning.<br />
+                <strong>KPIs:</strong> Headcount, attrition rate, tenure, demographics, job satisfaction, average salary.<br />
+                <strong>Tools:</strong> Power BI, DAX, Power Query.
+              </p>
+
               <ul class="actions special">
-                <li><a class="button" target="_blank"
-                  href="https://github.com/AbdelrahmanAde/HR-Analytics-Dashboard-Power-BI">
-                  View Project</a></li>
+                <li>
+                  <a href="https://github.com/AbdelrahmanAde/HR-Analytics-Dashboard-Power-BI"
+                     class="button" target="_blank" rel="noopener">
+                    View Project
+                  </a>
+                </li>
               </ul>
             </article>
 
+            <!-- ✅ full width divider between rows -->
+            <div class="divider"></div>
+
             <!-- Project 4 -->
             <article>
-              <h2><a class="project-title-link" target="_blank"
-                href="https://github.com/AbdelrahmanAde/Marketing-Campaign-Insights-Dashboard-Power-BI">
-                Marketing Campaign Insights — Power BI</a></h2>
-              <a class="image project-thumb" target="_blank"
-                href="https://github.com/AbdelrahmanAde/Marketing-Campaign-Insights-Dashboard-Power-BI">
-                <img src="images/Marketing%20Campaign%20Insights%20Dashboard%20.PNG" />
+              <header>
+                <h2>
+                  <a class="project-title-link"
+                     href="https://github.com/AbdelrahmanAde/Marketing-Campaign-Insights-Dashboard-Power-BI"
+                     target="_blank" rel="noopener">
+                    Marketing Campaign Insights Dashboard — Power BI
+                  </a>
+                </h2>
+              </header>
+
+              <a href="https://github.com/AbdelrahmanAde/Marketing-Campaign-Insights-Dashboard-Power-BI"
+                 class="image project-thumb" target="_blank" rel="noopener">
+                <img src="images/Marketing%20Campaign%20Insights%20Dashboard%20.PNG"
+                     alt="Marketing Campaign Insights Dashboard" />
               </a>
-              <p><strong>KPIs:</strong> Acceptance rate, income, region.</p>
+
+              <p>
+                <strong>Business problem:</strong> Evaluate marketing campaign effectiveness across regions and customer segments.<br />
+                <strong>KPIs:</strong> Campaign acceptance rate, total accepted, income level, performance by country, education, marital status.<br />
+                <strong>Tools:</strong> Power BI, DAX, Power Query.
+              </p>
+
               <ul class="actions special">
-                <li><a class="button" target="_blank"
-                  href="https://github.com/AbdelrahmanAde/Marketing-Campaign-Insights-Dashboard-Power-BI">
-                  View Project</a></li>
+                <li>
+                  <a href="https://github.com/AbdelrahmanAde/Marketing-Campaign-Insights-Dashboard-Power-BI"
+                     class="button" target="_blank" rel="noopener">
+                    View Project
+                  </a>
+                </li>
               </ul>
             </article>
 
             <!-- Project 5 -->
             <article>
-              <h2><a class="project-title-link" target="_blank"
-                href="https://github.com/AbdelrahmanAde/TCS-Stock-Market-Analysis-Dashboard-Power-BI">
-                TCS Stock Market Analysis — Power BI</a></h2>
-              <a class="image project-thumb" target="_blank"
-                href="https://github.com/AbdelrahmanAde/TCS-Stock-Market-Analysis-Dashboard-Power-BI">
-                <img src="images/TCS%20Stock%20Market%20Analysis%20(1)%20.PNG" />
+              <header>
+                <h2>
+                  <a class="project-title-link"
+                     href="https://github.com/AbdelrahmanAde/TCS-Stock-Market-Analysis-Dashboard-Power-BI"
+                     target="_blank" rel="noopener">
+                    TCS Stock Market Analysis Dashboard — Power BI
+                  </a>
+                </h2>
+              </header>
+
+              <a href="https://github.com/AbdelrahmanAde/TCS-Stock-Market-Analysis-Dashboard-Power-BI"
+                 class="image project-thumb" target="_blank" rel="noopener">
+                <img src="images/TCS%20Stock%20Market%20Analysis%20(1)%20.PNG"
+                     alt="TCS Stock Market Analysis Dashboard" />
               </a>
-              <p><strong>KPIs:</strong> Open, Close, High, Low.</p>
+
+              <p>
+                <strong>Business problem:</strong> Analyze historical stock price movements to identify trends and volatility.<br />
+                <strong>KPIs:</strong> Open, close, high, low prices (daily, monthly, quarterly, yearly).<br />
+                <strong>Tools:</strong> Power BI, DAX, Power Query.
+              </p>
+
               <ul class="actions special">
-                <li><a class="button" target="_blank"
-                  href="https://github.com/AbdelrahmanAde/TCS-Stock-Market-Analysis-Dashboard-Power-BI">
-                  View Project</a></li>
+                <li>
+                  <a href="https://github.com/AbdelrahmanAde/TCS-Stock-Market-Analysis-Dashboard-Power-BI"
+                     class="button" target="_blank" rel="noopener">
+                    View Project
+                  </a>
+                </li>
               </ul>
             </article>
 
           </section>
         </section>
       </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <section class="split contact">
+          <section class="alt">
+            <h3>Location</h3>
+            <p>Cairo, Egypt — Open to Remote & Relocation</p>
+          </section>
+          <section>
+            <h3>Phone</h3>
+            <p><a href="tel:+201070183860">+20 107 018 3860</a></p>
+          </section>
+          <section>
+            <h3>Email</h3>
+            <p><a href="mailto:abdelrahman.adel452@gmail.com">abdelrahman.adel452@gmail.com</a></p>
+          </section>
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <li><a href="https://www.linkedin.com" class="icon brands fa-linkedin" target="_blank" rel="noopener"><span class="label">LinkedIn</span></a></li>
+              <li><a href="https://github.com/AbdelrahmanAde" class="icon brands fa-github" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
+            </ul>
+          </section>
+        </section>
+      </footer>
+
+      <div id="copyright">
+        <ul><li>&copy; Abdelrahman Adel</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+      </div>
+
     </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
