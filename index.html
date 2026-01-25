@@ -11,12 +11,28 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- ✅ Projects-only styling (Alex-like layout + no cropped images) -->
+    <!-- ✅ Projects-only styling (Alex-like layout + 2x2 grid + no cropped images) -->
     <style>
       /* ---------- Projects layout + typography ---------- */
       #projects .post.featured {
         padding-top: 1.25rem;
         padding-bottom: 1.25rem;
+      }
+
+      /* ✅ Force 2 columns for projects (2+2) */
+      #projects .posts {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      /* Mobile: 1 column */
+      @media (max-width: 980px) {
+        #projects .posts {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
       }
 
       /* Featured title smaller than default featured (more Alex-like) */
@@ -34,29 +50,17 @@
       }
 
       /* Cleaner click style */
-      #projects .project-title-link{
+      #projects .project-title-link {
         text-decoration: none !important;
         border-bottom: none !important;
       }
 
       /* ---------- Image styling: show full image (no crop) ---------- */
-      /* Featured image: keep full image visible */
-      #projects .featured-thumb img{
+      #projects .featured-thumb img,
+      #projects .project-thumb img {
         width: 100%;
         aspect-ratio: 16 / 9;
-        object-fit: contain;        /* ✅ no crop */
-        background: #ffffff;        /* letterbox background */
-        border-radius: 10px;
-        padding: 10px;
-        display: block;
-        box-shadow: 0 10px 30px rgba(0,0,0,.08);
-      }
-
-      /* Regular cards: same behavior but a bit smaller */
-      #projects .project-thumb img{
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        object-fit: contain;        /* ✅ no crop */
+        object-fit: contain;     /* ✅ show full image (no crop) */
         background: #ffffff;
         border-radius: 10px;
         padding: 10px;
@@ -65,15 +69,9 @@
       }
 
       /* Alex-like hover */
-      #projects a.image:hover img{
+      #projects a.image:hover img {
         transform: translateY(-2px);
         transition: .2s ease;
-      }
-
-      /* Make Featured project look like a normal top card (not huge) */
-      #projects .post.featured .image.main,
-      #projects .post.featured .image {
-        margin: 1rem 0 1rem 0;
       }
 
       /* Buttons spacing tighter like Alex */
@@ -122,7 +120,7 @@
         <!-- Projects -->
         <section id="projects">
 
-          <!-- ✅ Project 1 (Top / Featured but not huge) -->
+          <!-- ✅ Project 1 (Top / Featured) -->
           <article class="post featured">
             <header class="major">
               <h2>
@@ -155,7 +153,7 @@
             </ul>
           </article>
 
-          <!-- ✅ Below: 2 projects row, then 2 projects row -->
+          <!-- ✅ Grid: Project 2+3 (row 1) then 4+5 (row 2) -->
           <section class="posts">
 
             <!-- Project 2 -->
@@ -337,4 +335,3 @@
     <script src="assets/js/main.js"></script>
   </body>
 </html>
-
