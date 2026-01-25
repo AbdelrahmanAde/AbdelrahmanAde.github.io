@@ -1,189 +1,300 @@
 <!DOCTYPE HTML>
 <!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
+  Massively by HTML5 UP
+  html5up.net | @ajlkn
 -->
 <html>
-	<head>
-		<title>Abdelrahman Adel | BI Developer Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+  <head>
+    <title>Abdelrahman Adel | BI Developer Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+    <!-- ✅ Smaller project images like AlexTheAnalyst style -->
+    <style>
+      /* Make project images look like clean thumbnails (not huge) */
+      .project-thumb img{
+        width: 100%;
+        height: 240px;           /* change to 200-280 if you want */
+        object-fit: cover;       /* keeps it nice without stretching */
+        border-radius: 6px;
+        display: block;
+      }
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Abdelrahman Adel<br />BI Developer</h1>
-						<p>
-							Business Intelligence Developer specialized in <strong>Power BI</strong>, <strong>SQL</strong>, and <strong>Data Analytics</strong>.<br />
-							I build dashboards and reports that turn data into actionable business insights.
-						</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+      /* Featured project thumbnail slightly taller */
+      .featured-thumb img{
+        width: 100%;
+        height: 320px;           /* change if you want smaller */
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+      }
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Portfolio</a>
-					</header>
+      /* Make titles clickable without ugly underline */
+      .project-title-link{
+        text-decoration: none;
+        border-bottom: none;
+      }
+    </style>
+  </head>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="#projects">Projects</a></li>
-							<li><a href="#footer">Contact</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com" class="icon brands fa-linkedin" target="_blank" rel="noopener"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/AbdelrahmanAde" class="icon brands fa-github" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+  <body class="is-preload">
 
-				<!-- Main -->
-					<div id="main">
+    <div id="wrapper" class="fade-in">
 
-						<!-- Projects -->
-						<section id="projects">
+      <!-- Intro -->
+      <div id="intro">
+        <h1>Abdelrahman Adel<br />BI Developer</h1>
+        <p>
+          Business Intelligence Developer specialized in <strong>Power BI</strong>, <strong>SQL</strong>, and <strong>Data Analytics</strong>.<br />
+          I build dashboards and reports that turn data into actionable business insights.
+        </p>
+        <ul class="actions">
+          <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+        </ul>
+      </div>
 
-							<!-- Featured Project -->
-							<article class="post featured">
-								<header class="major">
-									<h2>Customer Churn Analysis Dashboard — Power BI</h2>
-									<p>
-										<strong>Business problem:</strong> Identify customer churn patterns and key drivers to support retention-focused decisions.<br />
-										<strong>KPIs:</strong> Total customers, churn rate, churn by demographics, product usage, credit score, account balance.<br />
-										<strong>Tools:</strong> Power BI, DAX, Power Query.
-									</p>
-								</header>
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html" class="logo">Portfolio</a>
+      </header>
 
-								<!-- ✅ Image (matches your repo filename) -->
-								<a class="image main">
-									<img src="images/Customer%20Churn%20Analysis%20Dashboard%20.PNG" alt="Customer Churn Analysis Dashboard" />
-								</a>
-							</article>
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li class="active"><a href="#projects">Projects</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+        <ul class="icons">
+          <li><a href="https://www.linkedin.com" class="icon brands fa-linkedin" target="_blank" rel="noopener"><span class="label">LinkedIn</span></a></li>
+          <li><a href="https://github.com/AbdelrahmanAde" class="icon brands fa-github" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
+        </ul>
+      </nav>
 
-							<!-- Other Projects -->
-							<section class="posts">
+      <!-- Main -->
+      <div id="main">
 
-								<article>
-									<header>
-										<h2>E-Commerce Sales Performance Dashboard — Power BI</h2>
-									</header>
+        <!-- Projects -->
+        <section id="projects">
 
-									<!-- ✅ Image -->
-									<a class="image fit">
-										<img src="images/Overview%20.PNG" alt="E-Commerce Sales Performance Dashboard" />
-									</a>
+          <!-- ✅ Featured Project -->
+          <article class="post featured">
+            <header class="major">
+              <h2>
+                <a class="project-title-link"
+                   href="https://github.com/AbdelrahmanAde/Customer-Churn-Analysis-Dashboard-Power-BI"
+                   target="_blank" rel="noopener">
+                  Customer Churn Analysis Dashboard — Power BI
+                </a>
+              </h2>
+              <p>
+                <strong>Business problem:</strong> Identify customer churn patterns and key drivers to support retention-focused decisions.<br />
+                <strong>KPIs:</strong> Total customers, churn rate, churn by demographics, product usage, credit score, account balance.<br />
+                <strong>Tools:</strong> Power BI, DAX, Power Query.
+              </p>
+            </header>
 
-									<p>
-										<strong>Business problem:</strong> Monitor sales performance, order status, and regional demand for operational insights.<br />
-										<strong>KPIs:</strong> Total sales, units sold, seller count, order status, sales by city/state, sales trends.<br />
-										<strong>Tools:</strong> Power BI, DAX, Power Query.
-									</p>
-								</article>
+            <!-- ✅ Click image to open repo -->
+            <a href="https://github.com/AbdelrahmanAde/Customer-Churn-Analysis-Dashboard-Power-BI"
+               class="image featured-thumb" target="_blank" rel="noopener">
+              <img src="images/Customer%20Churn%20Analysis%20Dashboard%20.PNG"
+                   alt="Customer Churn Analysis Dashboard" />
+            </a>
 
-								<article>
-									<header>
-										<h2>HR Analytics Dashboard — Power BI</h2>
-									</header>
+            <!-- ✅ Button -->
+            <ul class="actions special">
+              <li>
+                <a href="https://github.com/AbdelrahmanAde/Customer-Churn-Analysis-Dashboard-Power-BI"
+                   class="button large" target="_blank" rel="noopener">
+                  View Project
+                </a>
+              </li>
+            </ul>
+          </article>
 
-									<!-- ✅ Image -->
-									<a class="image fit">
-										<img src="images/HR%20.PNG" alt="HR Analytics Dashboard" />
-									</a>
+          <!-- ✅ Other Projects -->
+          <section class="posts">
 
-									<p>
-										<strong>Business problem:</strong> Track workforce metrics and employee attrition to support HR reporting and workforce planning.<br />
-										<strong>KPIs:</strong> Headcount, attrition rate, tenure, demographics, job satisfaction, average salary.<br />
-										<strong>Tools:</strong> Power BI, DAX, Power Query.
-									</p>
-								</article>
+            <!-- Project 2 -->
+            <article>
+              <header>
+                <h2>
+                  <a class="project-title-link"
+                     href="https://github.com/AbdelrahmanAde/E-Commerce-Sales-Performance-Dashboard-Power-BI"
+                     target="_blank" rel="noopener">
+                    E-Commerce Sales Performance Dashboard — Power BI
+                  </a>
+                </h2>
+              </header>
 
-								<article>
-									<header>
-										<h2>Marketing Campaign Analysis Dashboard — Power BI</h2>
-									</header>
+              <a href="https://github.com/AbdelrahmanAde/E-Commerce-Sales-Performance-Dashboard-Power-BI"
+                 class="image project-thumb" target="_blank" rel="noopener">
+                <img src="images/Overview%20.PNG" alt="E-Commerce Sales Performance Dashboard" />
+              </a>
 
-									<!-- ✅ Image -->
-									<a class="image fit">
-										<img src="images/Marketing%20Campaign%20Insights%20Dashboard%20.PNG" alt="Marketing Campaign Analysis Dashboard" />
-									</a>
+              <p>
+                <strong>Business problem:</strong> Monitor sales performance, order status, and regional demand for operational insights.<br />
+                <strong>KPIs:</strong> Total sales, units sold, seller count, order status, sales by city/state, sales trends.<br />
+                <strong>Tools:</strong> Power BI, DAX, Power Query.
+              </p>
 
-									<p>
-										<strong>Business problem:</strong> Evaluate marketing campaign effectiveness across regions and customer segments.<br />
-										<strong>KPIs:</strong> Campaign acceptance rate, total accepted, income level, performance by country, education, marital status.<br />
-										<strong>Tools:</strong> Power BI, DAX, Power Query.
-									</p>
-								</article>
+              <ul class="actions special">
+                <li>
+                  <a href="https://github.com/AbdelrahmanAde/E-Commerce-Sales-Performance-Dashboard-Power-BI"
+                     class="button" target="_blank" rel="noopener">
+                    View Project
+                  </a>
+                </li>
+              </ul>
+            </article>
 
-								<article>
-									<header>
-										<h2>TCS Stock Market Analysis Dashboard — Power BI</h2>
-									</header>
+            <!-- Project 3 -->
+            <article>
+              <header>
+                <h2>
+                  <a class="project-title-link"
+                     href="https://github.com/AbdelrahmanAde/HR-Analytics-Dashboard-Power-BI"
+                     target="_blank" rel="noopener">
+                    HR Analytics Dashboard — Power BI
+                  </a>
+                </h2>
+              </header>
 
-									<!-- ✅ Image -->
-									<a class="image fit">
-										<img src="images/TCS%20Stock%20Market%20Analysis%20(1)%20.PNG" alt="TCS Stock Market Analysis Dashboard" />
-									</a>
+              <a href="https://github.com/AbdelrahmanAde/HR-Analytics-Dashboard-Power-BI"
+                 class="image project-thumb" target="_blank" rel="noopener">
+                <img src="images/HR%20.PNG" alt="HR Analytics Dashboard" />
+              </a>
 
-									<p>
-										<strong>Business problem:</strong> Analyze historical stock price movements to identify trends and volatility.<br />
-										<strong>KPIs:</strong> Open, close, high, low prices (daily, monthly, quarterly, yearly).<br />
-										<strong>Tools:</strong> Power BI, DAX, Power Query.
-									</p>
-								</article>
+              <p>
+                <strong>Business problem:</strong> Track workforce metrics and employee attrition to support HR reporting and workforce planning.<br />
+                <strong>KPIs:</strong> Headcount, attrition rate, tenure, demographics, job satisfaction, average salary.<br />
+                <strong>Tools:</strong> Power BI, DAX, Power Query.
+              </p>
 
-							</section>
-						</section>
+              <ul class="actions special">
+                <li>
+                  <a href="https://github.com/AbdelrahmanAde/HR-Analytics-Dashboard-Power-BI"
+                     class="button" target="_blank" rel="noopener">
+                    View Project
+                  </a>
+                </li>
+              </ul>
+            </article>
 
-					</div>
+            <!-- Project 4 -->
+            <article>
+              <header>
+                <h2>
+                  <a class="project-title-link"
+                     href="https://github.com/AbdelrahmanAde/Marketing-Campaign-Insights-Dashboard-Power-BI"
+                     target="_blank" rel="noopener">
+                    Marketing Campaign Insights Dashboard — Power BI
+                  </a>
+                </h2>
+              </header>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section class="split contact">
-							<section class="alt">
-								<h3>Location</h3>
-								<p>Cairo, Egypt — Open to Remote & Relocation</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="tel:+201070183860">+20 107 018 3860</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="mailto:abdelrahman.adel452@gmail.com">abdelrahman.adel452@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com" class="icon brands fa-linkedin" target="_blank" rel="noopener"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://github.com/AbdelrahmanAde" class="icon brands fa-github" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+              <a href="https://github.com/AbdelrahmanAde/Marketing-Campaign-Insights-Dashboard-Power-BI"
+                 class="image project-thumb" target="_blank" rel="noopener">
+                <img src="images/Marketing%20Campaign%20Insights%20Dashboard%20.PNG"
+                     alt="Marketing Campaign Insights Dashboard" />
+              </a>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Abdelrahman Adel</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+              <p>
+                <strong>Business problem:</strong> Evaluate marketing campaign effectiveness across regions and customer segments.<br />
+                <strong>KPIs:</strong> Campaign acceptance rate, total accepted, income level, performance by country, education, marital status.<br />
+                <strong>Tools:</strong> Power BI, DAX, Power Query.
+              </p>
 
-			</div>
+              <ul class="actions special">
+                <li>
+                  <a href="https://github.com/AbdelrahmanAde/Marketing-Campaign-Insights-Dashboard-Power-BI"
+                     class="button" target="_blank" rel="noopener">
+                    View Project
+                  </a>
+                </li>
+              </ul>
+            </article>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+            <!-- Project 5 -->
+            <article>
+              <header>
+                <h2>
+                  <a class="project-title-link"
+                     href="https://github.com/AbdelrahmanAde/TCS-Stock-Market-Analysis-Dashboard-Power-BI"
+                     target="_blank" rel="noopener">
+                    TCS Stock Market Analysis Dashboard — Power BI
+                  </a>
+                </h2>
+              </header>
 
-	</body>
+              <a href="https://github.com/AbdelrahmanAde/TCS-Stock-Market-Analysis-Dashboard-Power-BI"
+                 class="image project-thumb" target="_blank" rel="noopener">
+                <img src="images/TCS%20Stock%20Market%20Analysis%20(1)%20.PNG"
+                     alt="TCS Stock Market Analysis Dashboard" />
+              </a>
+
+              <p>
+                <strong>Business problem:</strong> Analyze historical stock price movements to identify trends and volatility.<br />
+                <strong>KPIs:</strong> Open, close, high, low prices (daily, monthly, quarterly, yearly).<br />
+                <strong>Tools:</strong> Power BI, DAX, Power Query.
+              </p>
+
+              <ul class="actions special">
+                <li>
+                  <a href="https://github.com/AbdelrahmanAde/TCS-Stock-Market-Analysis-Dashboard-Power-BI"
+                     class="button" target="_blank" rel="noopener">
+                    View Project
+                  </a>
+                </li>
+              </ul>
+            </article>
+
+          </section>
+
+        </section>
+
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <section class="split contact">
+          <section class="alt">
+            <h3>Location</h3>
+            <p>Cairo, Egypt — Open to Remote & Relocation</p>
+          </section>
+          <section>
+            <h3>Phone</h3>
+            <p><a href="tel:+201070183860">+20 107 018 3860</a></p>
+          </section>
+          <section>
+            <h3>Email</h3>
+            <p><a href="mailto:abdelrahman.adel452@gmail.com">abdelrahman.adel452@gmail.com</a></p>
+          </section>
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <li><a href="https://www.linkedin.com" class="icon brands fa-linkedin" target="_blank" rel="noopener"><span class="label">LinkedIn</span></a></li>
+              <li><a href="https://github.com/AbdelrahmanAde" class="icon brands fa-github" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
+            </ul>
+          </section>
+        </section>
+      </footer>
+
+      <div id="copyright">
+        <ul><li>&copy; Abdelrahman Adel</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+      </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
 </html>
