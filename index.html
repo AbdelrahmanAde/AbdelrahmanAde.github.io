@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- ✅ Projects-only styling (Alex-like layout + 2x2 grid + no cropped images + full-width dividers + vertical dividers) -->
+    <!-- ✅ Projects-only styling (Alex-like layout + 2x2 grid + no cropped images + full-width divider + vertical divider via CSS) -->
     <style>
       /* ---------- Projects layout + typography ---------- */
       #projects .post.featured {
         padding-top: 1.25rem;
         padding-bottom: 1.25rem;
-        margin-bottom: 1.25rem; /* reduced because we add a divider */
+        margin-bottom: 1.25rem; /* we add a divider after it */
       }
 
       /* ✅ Force 2 columns for projects (2+2) */
@@ -26,6 +26,22 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 2rem;
         margin-top: 1.5rem;
+        position: relative; /* for divider lines */
+      }
+
+      /* ✅ Vertical line between the two columns (covers 2|3 and 4|5) */
+      #projects .posts::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: rgba(0, 0, 0, 0.08);
+
+        /* center of the gap between the 2 columns:
+           50% is the middle of the grid, move left by half gap (1rem) */
+        left: calc(50% - 1rem);
+        pointer-events: none;
       }
 
       /* Mobile: 1 column */
@@ -33,6 +49,9 @@
         #projects .posts {
           grid-template-columns: 1fr;
           gap: 1.5rem;
+        }
+        #projects .posts::before {
+          display: none; /* hide vertical line on mobile */
         }
       }
 
@@ -80,15 +99,7 @@
         margin-top: 0.75rem;
       }
 
-      /* ✅ FULL-WIDTH HORIZONTAL DIVIDERS */
-      #projects .divider {
-        grid-column: 1 / -1;              /* full width across both columns */
-        height: 1px;
-        background: rgba(0,0,0,0.08);
-        margin: 0.25rem 0 0.25rem 0;
-      }
-
-      /* ✅ Another full-width divider between Featured and the grid */
+      /* ✅ FULL-WIDTH HORIZONTAL DIVIDER between Project 1 and (2,3,4,5) */
       #projects .divider-top {
         width: 100%;
         height: 1px;
@@ -96,42 +107,20 @@
         margin: 0.75rem 0 1.5rem 0;
       }
 
-      /* ✅ FULL-HEIGHT VERTICAL DIVIDERS (between 2|3 and 4|5) */
-      #projects .vdivider {
-        grid-row: span 1;                 /* one row */
-        height: 100%;
-        min-height: 100%;
-        align-self: stretch;
-        justify-self: center;
-        width: 1px;
+      /* ✅ FULL-WIDTH DIVIDER between rows (between 2,3) and (4,5) */
+      #projects .divider {
+        grid-column: 1 / -1;
+        height: 1px;
         background: rgba(0,0,0,0.08);
+        margin: 0.25rem 0 0.25rem 0;
       }
 
-      /* Place vdivider in the middle column line */
-      #projects .vdivider {
-        grid-column: 2; /* sits between col 1 and col 2 visually */
-      }
-
-      /* We want it to overlay between the two columns; use absolute-like trick */
-      #projects .posts {
-        position: relative;
-      }
-
-      /* Make vdivider sit centered in the gap */
-      #projects .vdivider {
-        transform: translateX(-1rem); /* half of gap (2rem) to center it */
-      }
-
-      /* On mobile (1 column), hide vertical lines */
       @media (max-width: 980px) {
         #projects .divider {
           margin: 0.5rem 0;
         }
         #projects .divider-top {
           margin: 0.75rem 0 1.25rem 0;
-        }
-        #projects .vdivider {
-          display: none;
         }
       }
     </style>
@@ -209,13 +198,13 @@
             </ul>
           </article>
 
-          <!-- ✅ Full-width divider between Project 1 and (2,3,4,5) -->
+          <!-- ✅ Horizontal line between Project 1 and grid -->
           <div class="divider-top"></div>
 
-          <!-- ✅ Grid: Project 2+3 (row 1) then divider then 4+5 (row 2) + vertical dividers -->
+          <!-- ✅ Grid: Project 2+3 then divider then 4+5 -->
           <section class="posts">
 
-            <!-- Row 1 / Col 1 : Project 2 -->
+            <!-- Project 2 -->
             <article>
               <header>
                 <h2>
@@ -248,10 +237,7 @@
               </ul>
             </article>
 
-            <!-- Row 1 / Vertical divider between 2 and 3 -->
-            <div class="vdivider" aria-hidden="true"></div>
-
-            <!-- Row 1 / Col 2 : Project 3 -->
+            <!-- Project 3 -->
             <article>
               <header>
                 <h2>
@@ -284,10 +270,10 @@
               </ul>
             </article>
 
-            <!-- ✅ full width divider between rows -->
+            <!-- ✅ divider between rows -->
             <div class="divider"></div>
 
-            <!-- Row 2 / Col 1 : Project 4 -->
+            <!-- Project 4 -->
             <article>
               <header>
                 <h2>
@@ -321,10 +307,7 @@
               </ul>
             </article>
 
-            <!-- Row 2 / Vertical divider between 4 and 5 -->
-            <div class="vdivider" aria-hidden="true"></div>
-
-            <!-- Row 2 / Col 2 : Project 5 -->
+            <!-- Project 5 -->
             <article>
               <header>
                 <h2>
