@@ -2,162 +2,239 @@
 <!--
     Massively by HTML5 UP
     html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-<head>
-    <title>Abdelrahman Adel | BI Developer Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <head>
+        <title>Abdelrahman Adel | BI Developer Portfolio</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    
+    <!-- Custom tweaks: tighter spacing + project images -->
+    <style>
+      /* Reduce overall vertical whitespace in About & Skills */
+      #about.post, #skills.post { padding-top: 2.25rem; padding-bottom: 1.25rem; }
+      #about.post p, #skills.post p { margin: 0 0 0.9rem 0; }
+      #skills.post h3 { margin: 1.25rem 0 0.5rem 0; }
+      #skills.post ul { margin: 0 0 0.9rem 0; }
+      #skills.post ul li { margin: 0.2rem 0; }
+
+      /* Make skill lists more compact on wide screens */
+      @media (min-width: 980px){
+        #skills .two-col { columns: 2; column-gap: 2.5rem; }
+        #skills .two-col li { break-inside: avoid; }
+      }
+
+      /* Project image spacing */
+      .post.featured .image.fit, .posts article .image.fit { margin: 0 0 1.25rem 0; }
+      .image.fit img { border-radius: 10px; }
+      /* Slightly tighter cards */
+      .posts article { padding-bottom: 0.5rem; }
+      .posts article p { margin-bottom: 1rem; }
+    </style>
+
+
+    <!-- Custom layout: 1 featured project + 2-column projects grid -->
+    <style>
+      /* Two-column grid for the remaining projects */
+      @media (min-width: 980px){
+        section.posts{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem 2rem;
+          align-items: start;
+        }
+        section.posts > article{
+          margin: 0 !important;
+          width: 100%;
+        }
+      }
+      /* Slightly tighter spacing around projects section */
+      .post.featured { padding-bottom: 1.5rem; }
+      section.posts { margin-top: 1rem; }
+    </style>
+
 </head>
+    <body class="is-preload">
 
-<body class="is-preload">
+        <!-- Wrapper -->
+        <div id="wrapper" class="fade-in">
 
-<div id="wrapper" class="fade-in">
-
-    <!-- Intro -->
-    <div id="intro">
-        <h1>Abdelrahman Adel<br />BI Developer</h1>
-        <p>
-            Business Intelligence Developer specialized in <strong>Power BI</strong>, <strong>SQL</strong>, and <strong>Data Analytics</strong>.<br />
-            I build dashboards and reports that turn data into actionable business insights.
-        </p>
-        <ul class="actions">
-            <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-        </ul>
-    </div>
-
-    <!-- Header -->
-    <header id="header">
-        <a href="index.html" class="logo">Portfolio</a>
-    </header>
-
-    <!-- Nav -->
-    <nav id="nav">
-        <ul class="links">
-            <li class="active"><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <ul class="icons">
-            <li><a href="https://www.linkedin.com/in/abdelrahman-adel-341292387" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-            <li><a href="https://github.com/AbdelrahmanAde" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-        </ul>
-    </nav>
-
-    <!-- Main -->
-    <div id="main">
-
-        <!-- Projects -->
-        <section id="projects">
-
-            <!-- Featured Project -->
-            <article class="post featured">
-                <header class="major">
-                    <h2>Customer Churn Analysis Dashboard — Power BI</h2>
-                    <p>
-                        <strong>Business Problem:</strong> Identify customer churn patterns and key drivers to support retention-focused decisions.<br />
-                        <strong>KPIs:</strong> Total customers, churn rate, churn by demographics, product usage, credit score, account balance.<br />
-                        <strong>Tools:</strong> Power BI, DAX, Power Query.
-                    </p>
-                </header>
-            </article>
-
-            <!-- Other Projects -->
-            <section class="posts">
-
-                <article>
-                    <header>
-                        <h2>E-Commerce Sales Performance Dashboard — Power BI</h2>
-                    </header>
-                    <p>
-                        <strong>Business Problem:</strong> Monitor sales performance, order status, and regional demand for operational insights.<br />
-                        <strong>KPIs:</strong> Total sales, units sold, seller count, order status, sales by city/state, sales trends.<br />
-                        <strong>Tools:</strong> Power BI, DAX, Power Query.
-                    </p>
-                </article>
-
-                <article>
-                    <header>
-                        <h2>HR Analytics Dashboard — Power BI</h2>
-                    </header>
-                    <p>
-                        <strong>Business Problem:</strong> Track workforce metrics and employee attrition to support HR reporting and workforce planning.<br />
-                        <strong>KPIs:</strong> Headcount, attrition rate, tenure, demographics, job satisfaction, average salary.<br />
-                        <strong>Tools:</strong> Power BI, DAX, Power Query.
-                    </p>
-                </article>
-
-                <article>
-                    <header>
-                        <h2>Marketing Campaign Analysis Dashboard — Power BI</h2>
-                    </header>
-                    <p>
-                        <strong>Business Problem:</strong> Evaluate marketing campaign effectiveness across regions and customer segments.<br />
-                        <strong>KPIs:</strong> Campaign acceptance rate, total accepted, income level, performance by country, education, marital status.<br />
-                        <strong>Tools:</strong> Power BI, DAX, Power Query.
-                    </p>
-                </article>
-
-                <article>
-                    <header>
-                        <h2>TCS Stock Market Analysis Dashboard — Power BI</h2>
-                    </header>
-                    <p>
-                        <strong>Business Problem:</strong> Analyze historical stock price movements to identify trends and volatility.<br />
-                        <strong>KPIs:</strong> Open, close, high, low prices (daily, monthly, quarterly, yearly).<br />
-                        <strong>Tools:</strong> Power BI, DAX, Power Query.
-                    </p>
-                </article>
-
-            </section>
-        </section>
-
-    </div>
-
-    <!-- Footer -->
-    <footer id="footer">
-        <section id="contact" class="split contact">
-            <section class="alt">
-                <h3>Location</h3>
-                <p>Cairo, Egypt — Open to Remote & Relocation</p>
-            </section>
-            <section>
-                <h3>Phone</h3>
-                <p><a href="tel:+201070183860">+20 107 018 3860</a></p>
-            </section>
-            <section>
-                <h3>Email</h3>
-                <p><a href="mailto:abdelrahman.adel452@gmail.com">abdelrahman.adel452@gmail.com</a></p>
-            </section>
-            <section>
-                <h3>Social</h3>
-                <ul class="icons alt">
-                    <li><a href="https://www.linkedin.com/in/abdelrahman-adel-341292387" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="https://github.com/AbdelrahmanAde" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+            <!-- Intro -->
+            <div id="intro">
+                <h1>Abdelrahman Adel<br />
+                BI Developer</h1>
+                <p>
+                    Business Intelligence Developer specialized in <strong>Power BI</strong>, <strong>SQL</strong>, and <strong>Data Analytics</strong>.<br />
+                    I build executive-ready dashboards, KPI reports, and scalable BI solutions that turn raw data into actionable insights.
+                </p>
+                <ul class="actions">
+                    <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
                 </ul>
-            </section>
-        </section>
-    </footer>
+            </div>
 
-    <!-- Copyright -->
-    <div id="copyright">
-        <ul>
-            <li>&copy; Abdelrahman Adel</li>
-            <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-        </ul>
-    </div>
+<!-- Header -->
+            <header id="header">
+                <a href="index.html" class="logo">Portfolio</a>
+            </header>
 
+            <!-- Nav -->
+            <nav id="nav">
+                <ul class="links">
+                    <li class="active"><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+                </ul>
+                <ul class="icons">
+                    <li><a href="https://www.linkedin.com/in/abdelrahman-adel-341292387" class="icon brands fa-linkedin" target="_blank" rel="noopener"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="https://github.com/AbdelrahmanAde?tab=repositories" class="icon brands fa-github" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
+                </ul>
+            </nav>
+
+            <!-- Main -->
+            <div id="main">
+
+                <!-- Projects -->
+                <section id="projects">
+
+                    <!-- Featured Project -->
+                    <article class="post featured">
+                        <header class="major">
+                            <h2><a href="https://github.com/AbdelrahmanAde" target="_blank" rel="noopener">Customer Churn Analysis Dashboard<br />(Power BI)</a></h2>
+                            <p>
+                                <strong>Business Problem:</strong> Identify customer churn patterns and key drivers to support retention-focused decisions.<br />
+                                <strong>KPIs:</strong> Total customers, churn rate, churn by demographics, product usage, credit score, account balance.<br />
+                                <strong>Tools:</strong> Power BI, DAX, Power Query.
+                            </p>
+                        </header>
+                        <a href="https://github.com/AbdelrahmanAde" class="image main" target="_blank" rel="noopener">
+                            <img src="images/churn-dashboard.png" alt="Customer Churn Analysis Dashboard" />
+                        </a>
+                        <ul class="actions special">
+                            <li><a href="https://github.com/AbdelrahmanAde" class="button large" target="_blank" rel="noopener">View Project</a></li>
+                        </ul>
+                    </article>
+
+                    <!-- Other Projects -->
+                    <section class="posts">
+
+                        <article>
+                            <header>
+                                <h2><a href="https://github.com/AbdelrahmanAde" target="_blank" rel="noopener">E-Commerce Sales Performance Dashboard (Power BI)</a></h2>
+                            </header>
+                            <a href="https://github.com/AbdelrahmanAde" class="image fit" target="_blank" rel="noopener">
+                                <img src="images/ecommerce-sales.png" alt="E-Commerce Sales Performance Dashboard" />
+                            </a>
+                            <p>
+                                <strong>Business Problem:</strong> Monitor sales performance, order status, and regional demand for operational insights.<br />
+                                <strong>KPIs:</strong> Total sales, units sold, seller count, order status, sales by city/state, sales trends.<br />
+                                <strong>Tools:</strong> Power BI, DAX, Power Query.
+                            </p>
+                            <ul class="actions special">
+                                <li><a href="https://github.com/AbdelrahmanAde" class="button" target="_blank" rel="noopener">View Project</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <header>
+                                <h2><a href="https://github.com/AbdelrahmanAde" target="_blank" rel="noopener">HR Analytics Dashboard (Power BI)</a></h2>
+                            </header>
+                            <a href="https://github.com/AbdelrahmanAde" class="image fit" target="_blank" rel="noopener">
+                                <img src="images/hr-analytics.png" alt="HR Analytics Dashboard" />
+                            </a>
+                            <p>
+                                <strong>Business Problem:</strong> Track workforce metrics and employee attrition to support HR reporting and workforce planning.<br />
+                                <strong>KPIs:</strong> Headcount, attrition rate, tenure, demographics, job satisfaction, average salary.<br />
+                                <strong>Tools:</strong> Power BI, DAX, Power Query.
+                            </p>
+                            <ul class="actions special">
+                                <li><a href="https://github.com/AbdelrahmanAde" class="button" target="_blank" rel="noopener">View Project</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <header>
+                                <h2><a href="https://github.com/AbdelrahmanAde" target="_blank" rel="noopener">Marketing Campaign Analysis Dashboard (Power BI)</a></h2>
+                            </header>
+                            <a href="https://github.com/AbdelrahmanAde" class="image fit" target="_blank" rel="noopener">
+                                <img src="images/marketing-campaign.png" alt="Marketing Campaign Analysis Dashboard" />
+                            </a>
+                            <p>
+                                <strong>Business Problem:</strong> Evaluate marketing campaign effectiveness across regions and customer segments.<br />
+                                <strong>KPIs:</strong> Campaign acceptance rate, total accepted, income level, performance by country, education, marital status.<br />
+                                <strong>Tools:</strong> Power BI, DAX, Power Query.
+                            </p>
+                            <ul class="actions special">
+                                <li><a href="https://github.com/AbdelrahmanAde" class="button" target="_blank" rel="noopener">View Project</a></li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <header>
+                                <h2><a href="https://github.com/AbdelrahmanAde" target="_blank" rel="noopener">TCS Stock Market Analysis Dashboard (Power BI)</a></h2>
+                            </header>
+                            <a href="https://github.com/AbdelrahmanAde" class="image fit" target="_blank" rel="noopener">
+                                <img src="images/tcs-stock.png" alt="TCS Stock Market Analysis Dashboard" />
+                            </a>
+                            <p>
+                                <strong>Business Problem:</strong> Analyze historical stock price movements to identify trends and volatility.<br />
+                                <strong>KPIs:</strong> Open, close, high, low prices (daily, monthly, quarterly, yearly).<br />
+                                <strong>Tools:</strong> Power BI, DAX, Power Query.
+                            </p>
+                            <ul class="actions special">
+                                <li><a href="https://github.com/AbdelrahmanAde" class="button" target="_blank" rel="noopener">View Project</a></li>
+                            </ul>
+                        </article>
+
+                    </section>
+                </section>
+
+<!-- About -->
+<!-- Skills -->
 </div>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+            <!-- Footer -->
+            <footer id="footer">
+                <section id="contact" class="split contact">
+                    <section class="alt">
+                        <h3>Location</h3>
+                        <p>Cairo, Egypt — Open to Relocation & Remote</p>
+                    </section>
+                    <section>
+                        <h3>Phone</h3>
+                        <p><a href="tel:+201070183860">+20 107 018 3860</a></p>
+                    </section>
+                    <section>
+                        <h3>Email</h3>
+                        <p><a href="mailto:abdelrahman.adel452@gmail.com">abdelrahman.adel452@gmail.com</a></p>
+                    </section>
+                    <section>
+                        <h3>Social</h3>
+                        <ul class="icons alt">
+                            <li><a href="https://www.linkedin.com/in/abdelrahman-adel-341292387" class="icon brands fa-linkedin" target="_blank" rel="noopener"><span class="label">LinkedIn</span></a></li>
+                            <li><a href="https://github.com/AbdelrahmanAde?tab=repositories" class="icon brands fa-github" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
+                        </ul>
+                    </section>
+                </section>
+            </footer>
 
-</body>
+            <!-- Copyright -->
+            <div id="copyright">
+                <ul><li>&copy; Abdelrahman Adel</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+            </div>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
 </html>
+
